@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        html, body {
+            width: 100%;
+            margin: 0;
+        }
+
+        .controls {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-top: 0.5em;
+        }
+
+        .controls div {
+            margin-bottom: 0.75em;
+            
+            display: flex;
+            align-items: center;
+        }
+
+        .controls div * {
+            margin-left: 0.2em;
+        }
+
+        .first-row {
+            margin-top: 1em;
+        }
+        
+        .second-row {
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        #answer {
+            min-width: 20em;
+        }
+
+        .border {
+            border: 1px solid black;
+        }
+
+        #grid {
+            width: 425px;
+            display: grid;
+
+            --side: 28;
+
+            grid-template-columns: repeat(var(--side), 1fr);
+            grid-template-rows: repeat(var(--side), 1fr);
+        }
+
+        #grid div {
+            aspect-ratio: 1;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <div>
+            <label for="brushSize">Brush size</label>
+            <input type="number" id="brushSize" value="2" step="0.5">
+        </div>
+
+        <div>
+            <label for="drawingMode">Drawing mode?</label>
+            <input id="drawingMode" type="checkbox">
+            <span id="reply"></span>
+        </div>
+        
+        <div>
+            <button id="clear">Clear</button>
+            <button id="classify">Classify</button>
+            <input type="text" id="answer" readonly>
+            <span id="state">Connecting...</span>
+        </div>
+    </div>
+
+    <div class="border">
+        <div id="grid" draggable="false"></div>
+    </div>
+
+    <script src="./main.ts" type="module"></script>
+</body>
+</html>
