@@ -1,5 +1,5 @@
-Multi-layer percetron network learning how to recognize digits from MNIST dataset.
-Written in Julia
+Multi-layer (sigmoid) percetron network learning how to recognize digits 
+from MNIST dataset. Written in Julia
 
 Includes a simpled web app to draw a digit and try to recognize it
 
